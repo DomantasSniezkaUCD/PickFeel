@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% load filter_images %}
+
+
+{% block content %}
+    <h1>Filtration</h1>
+    <h6>Select images that represent 'Depression'</h6>
+
+    <!--Grid-->
+    <div class="container-fluid my-container">
+
+        {% filter_images_depression 3 as images %}
+
+        <div class="row no-pad display-flex  my-row">
+            {% for image in images %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
+                    <input class="img-thumbnail" type="image" id="image" alt="Image" src="{{ MEDIA_URL}}{{ image }}">
+{#                  <img class="img-thumbnail" src="{{ MEDIA_URL}}{{ image }}">#}
+                </div>
+            {% endfor %}
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block">Finish</button>
+    </div>
+
+
+
+    <!--Refresh Button-->
+    <div class="">
+        <form method="post">
+            {% csrf_token %}
+            <button id='refresh-btn' href="" type="submit" class="btn-sm btn-danger">Refresh</button>
+        </form>
+    </div>
+
+{% endblock content %}

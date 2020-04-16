@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% load filter_images %}
+
+
+{% block content %}
+
+<div class="container-fluid my-container">
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+</div>
+
+
+    <div class="container-fluid my-container">
+        {% filter_images_normal 6 as images %}
+
+        <div class="row no-pad display-flex  my-row">
+            {% for image in images %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
+                    <input class="img-thumbnail" type="image" id="image" alt="Image" src="{{ MEDIA_URL}}{{ image }}">
+                  <p>Image name file here</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
