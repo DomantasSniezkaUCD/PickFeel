@@ -18,10 +18,9 @@ from django.urls import path, include
 from app_register import views
 
 urlpatterns = [
-    path('', include('app_register.urls')),
-    # path('', include('app_pickfeel.urls')),  # default view
+    path('', include('app_pickfeel.urls')),  # default view
     path('admin/', admin.site.urls),
-    # path('register/', views.register, name='register'),
+    path('register/', views.register, name='register'),
     path('', include("django.contrib.auth.urls")),
 
     path('pickfeel/', include('app_pickfeel.urls')),  # maps to app_pickfeel urls.py file
