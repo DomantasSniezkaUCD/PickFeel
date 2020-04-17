@@ -3,8 +3,11 @@
 
 
 {% block content %}
+    <h1>Welcome to PickFeel!</h1>
+    <h5>An Image Based Assessment Tool.</h5>
+    <br><br>
     <form method="post" class="from-group">
-        <h2>Login</h2>
+        <h4>Login</h4>
         {% csrf_token %}
         {{ form|crispy}}
         <p>Don't have an account? Create one <a href="/register">here</a></p>
