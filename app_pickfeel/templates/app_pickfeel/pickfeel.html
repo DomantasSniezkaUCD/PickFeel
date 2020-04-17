@@ -6,12 +6,11 @@
 {% block content %}
     <h1>PickFeel</h1>
     <h6>Pick an image based on how you feel</h6>
-    <h6>Testing</h6>
 
     <!--Grid-->
     <div class="container-fluid my-container">
 
-        {% random_images_normal 3 as images_normal %}
+        {% random_images_category1 3 as images_normal %}
         <div class="row no-pad display-flex  my-row">
             {% for image in images_normal %}
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
@@ -21,7 +20,7 @@
             {% endfor %}
         </div>
 
-        {% random_images_depression 3 as images_depression %}
+        {% random_images_category2 3 as images_depression %}
             <div class="row no-pad display-flex  my-row">
                 {% for image in images_depression %}
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
@@ -31,7 +30,7 @@
                 {% endfor %}
             </div>
 
-         {% random_images_mania 3 as images_mania %}
+         {% random_images_category3 3 as images_mania %}
             <div class="row no-pad display-flex  my-row">
                 {% for image in images_mania %}
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
