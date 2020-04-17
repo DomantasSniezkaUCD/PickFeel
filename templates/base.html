@@ -26,7 +26,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">PickFeel</a>
+          <a class="navbar-brand mr-4" href="/pickfeel">PickFeel</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -38,9 +38,12 @@
 
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-normal' %}">Filtration-Normal</a>
-              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-mania' %}">Filtration-Mania</a>
-              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-depression' %}">Filtration-Depression</a>
+{#              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-normal' %}">Filtration-Normal</a>#}
+{#              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-mania' %}">Filtration-Mania</a>#}
+{#              <a class="nav-item nav-link" href="{% url 'pick-feel-filter-depression' %}">Filtration-Depression</a>#}
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                <a class="nav-item nav-link" href="{% url 'login' %}">login</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">logout</a>
             </div>
 
           </div>
@@ -48,9 +51,11 @@
       </nav>
     </header>
 
+
     <main role="main" class="container">
         <div class="col-md-8">
-          {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}
         </div>
     </main>
 

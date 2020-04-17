@@ -43,11 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
     #  needed for templates, models and databases
     'app_pickfeel.apps.AppPickfeelConfig',
     'app_filter.apps.AppFilterConfig',
     'app_info.apps.AppInfoConfig',
+    'app_register.apps.AppRegisterConfig',
 
     # template tags
     'app_pickfeel.templatetags.random_Image',
@@ -134,4 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Form styling
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# login/logout redirect
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
