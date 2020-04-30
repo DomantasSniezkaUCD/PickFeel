@@ -8,7 +8,7 @@ register = template.Library()
 
 
 @register.simple_tag
-def random_images_category1(count=3):
+def random_images_normal(count=3):
     valid_extensions = ('.jpg', '.jpeg', '.png', '.gif')
     rand_dir = '/static/app_pickfeel/images/normal/'
     path = '/app_pickfeel/static/app_pickfeel/images/normal/'
@@ -21,7 +21,7 @@ def random_images_category1(count=3):
 
 
 @register.simple_tag
-def random_images_category2(count=9):
+def random_images_mania(count=9):
     valid_extensions = ('.jpg', '.jpeg', '.png', '.gif')
     rand_dir = '/static/app_pickfeel/images/mania/'
     path = '/app_pickfeel/static/app_pickfeel/images/mania/'
@@ -34,7 +34,7 @@ def random_images_category2(count=9):
 
 
 @register.simple_tag
-def random_images_category3(count=9):
+def random_images_depression(count=9):
     valid_extensions = ('.jpg', '.jpeg', '.png', '.gif')
     rand_dir = '/static/app_pickfeel/images/depression/'
     path = '/app_pickfeel/static/app_pickfeel/images/depression/'
