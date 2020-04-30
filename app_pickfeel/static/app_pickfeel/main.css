@@ -47,6 +47,14 @@ font-weight: 500;
     object-fit: cover;
 }
 
+/*Alternative solution to removing gaps between images*/
+/*.row.no-pad > [class*='col-'] {*/
+  /*padding-right:0;*/
+  /*padding-left:0;*/
+  /*white-space: nowrap;*/
+  /*display:grid;*/
+/*}*/
+
 
 /*Removes gutter in between columns*/
 .row.no-pad {
