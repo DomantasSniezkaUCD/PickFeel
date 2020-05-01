@@ -103,5 +103,32 @@ font-weight: 500;
   outline: 2px solid #f00;
 }
 
+/*Changes Opacity when user hovers over image*/
+.brightness {
+    background-color: white;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .5;
+}
+
+.image-radio {
+  cursor:pointer;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  border:4px solid transparent;
+  outline:0;
+}
+
+.image-radio input[type="radio"] {
+  display:none;
+}
+
+.image-radio-checked {
+  border: 4px solid #f58723;
+}
+
 
 
