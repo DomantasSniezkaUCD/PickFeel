@@ -12,6 +12,18 @@
 
 		<form action="addition" method="post" >
         {% csrf_token %}
+                {% random_images_mania 3 as images_depression %}
+            <div class="row no-pad display-flex  my-row">
+                {% for image in images_depression %}
+                    <div class="image-radio brightness col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
+						<label for="{{ image }}">
+							<img class="img-thumbnail" src="{{ MEDIA_URL}}{{ image }}">
+							<input type="radio" id="{{ image }}" name="checked-radio" value="mania" style="visibility:hidden">
+						</label>
+                    </div>
+                {% endfor %}
+            </div>
+
         {% random_images_normal 3 as images_normal %}
         <div class="row no-pad display-flex  my-row">
             {% for image in images_normal %}
@@ -24,19 +36,7 @@
             {% endfor %}
         </div>
 
-        {% random_images_mania 3 as images_depression %}
-            <div class="row no-pad display-flex  my-row">
-                {% for image in images_depression %}
-                    <div class="image-radio brightness col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
-						<label for="{{ image }}">
-							<img class="img-thumbnail" src="{{ MEDIA_URL}}{{ image }}">
-							<input type="radio" id="{{ image }}" name="checked-radio" value="mania" style="visibility:hidden">
-						</label>
-                    </div>
-                {% endfor %}
-            </div>
-
-         {% random_images_depression 3 as images_mania %}
+            {% random_images_depression 3 as images_mania %}
             <div class="row no-pad display-flex  my-row">
                 {% for image in images_mania %}
                     <div class="image-radio brightness col-xl-4 col-lg-4 col-md-4 col-sm-4 col- my-col my-col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 my-col">
@@ -47,6 +47,7 @@
                     </div>
                 {% endfor %}
             </div>
+
 		<button type="submit" class="btn btn-primary btn-lg btn-block">Finish</button>
 		</form>
     </div>
